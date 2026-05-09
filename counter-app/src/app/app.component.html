@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+  </head>
+  <body>
+    <h1>Counter App</h1>
+    <div style="text-align: center">
+      <h2 class="count">{{ count }}</h2>
+      <button class="btn bg-green" (click)="handleCounter('increment')">
+        Increment
+      </button>
+      <button class="btn bg-red" (click)="handleCounter('decrement')">
+        Decrement
+      </button>
+      <button class="btn bg-black" (click)="handleCounter('reset')">
+        Reset
+      </button>
+    </div>
+  </body>
+</html>
