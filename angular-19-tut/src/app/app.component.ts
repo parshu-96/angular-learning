@@ -11,7 +11,11 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  name = 'Parshuram Mahindrakar';
-  x = 10;
-  y = 20;
+  handleClickEvent() {
+    console.log('Button clicked!');
+    this.otherFunction();
+  }
+  otherFunction() {
+    console.log('Other function called!');
+  }
 }
