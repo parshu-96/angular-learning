@@ -8,10 +8,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  display = false;
-  toggleDiv = false;
-
-  toggle() {
-    this.toggleDiv = !this.toggleDiv;
+  // display = false;
+  // toggleDiv = false;
+  color = 1;
+  handleColor(val: number) {
+    this.color = val;
+  }
+  handleInput(event: Event) {
+    this.color = Number((event.target as HTMLInputElement).value);
   }
 }
