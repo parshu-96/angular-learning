@@ -10,11 +10,15 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   // display = false;
   // toggleDiv = false;
-  color = 1;
-  handleColor(val: number) {
+  // color = 1;
+  // handleColor(val: number) {
+  //   this.color = val;
+  // }
+  // handleInput(event: Event) {
+  //   this.color = Number((event.target as HTMLInputElement).value);
+  // }
+  color = 'green';
+  handleColor(val: string) {
     this.color = val;
-  }
-  handleInput(event: Event) {
-    this.color = Number((event.target as HTMLInputElement).value);
   }
 }
