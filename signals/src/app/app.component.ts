@@ -28,9 +28,17 @@ export class AppComponent {
   //   this.count.set(this.count() + 1);
   // }
   //data = signal<string | number>(10);
-  data: WritableSignal<string | number> = signal<string | number>(10);
-  count: Signal<Number> = computed(() => 20);
-  updateData() {
-    this.data.set('Hello World');
+  // data: WritableSignal<string | number> = signal<string | number>(10);
+  // count: Signal<Number> = computed(() => 20);
+  // updateData() {
+  //   this.data.set('Hello World');
+  // }
+  x = signal(10);
+  y = 20;
+  z = computed(() => this.x() + this.y);
+
+  showValue() {
+    console.log('Value of z: ', this.z());
+    this.x.set(100);
   }
 }
