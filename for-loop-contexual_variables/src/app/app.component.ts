@@ -7,4 +7,18 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent {
+  users = [
+    'Elon Musk',
+    'Jeff Bezos',
+    'Bill Gates',
+    'Mark Zuckerberg',
+    'Larry Page',
+    'Sergey Brin',
+    'Warren Buffett',
+    'Steve Jobs',
+    'Tim Cook',
+    'Satya Nadella',
+  ];
+  users2 = [];
+}

@@ -1,0 +1,27 @@
+<h2>Contextual variables in for loop</h2>
+@for (user of users; track $index) {
+  <!-- @if ($first || $last) {
+    <h3 style="background-color: red">{{ $index }}: {{ user }}</h3>
+  } @else {
+    <h3>{{ $index }}: {{ user }}</h3>
+  } -->
+  @if ($odd) {
+    <h3 style="background-color: gray">{{ $index }}: {{ user }}</h3>
+  }
+
+  @if ($even) {
+    <h3 style="background-color: lightgray">{{ $index }}: {{ user }}</h3>
+  }
+  @if ($last) {
+    <h3 style="background-color: red">{{ $count }}</h3>
+  }
+}
+@for (user of users2; track $index) {
+  @if ($first) {
+    <h4 style="background-color: blue">{{ $index }}: {{ user }}</h4>
+  } @else {
+    <h4>{{ $index }}: {{ user }}</h4>
+  }
+} @empty {
+  <h4>No record Found</h4>
+}
