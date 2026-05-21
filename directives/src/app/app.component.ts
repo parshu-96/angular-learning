@@ -1,10 +1,10 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -39,4 +39,10 @@ export class AppComponent {
       city: 'Hyderabad',
     },
   ];
+
+  login = true;
+  block = 0;
+  updateBlock() {
+    this.block = this.block + 1;
+  }
 }
