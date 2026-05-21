@@ -1,1 +1,14 @@
 <h2 *ngIf="show">Directives</h2>
+
+<h2>ngFor directive</h2>
+<ul>
+  <li *ngFor="let student of students">{{ student }}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let student of studentsData">
+    <p>{{ student.name }}</p>
+    <p>{{ student.age }}</p>
+    <p>{{ student.city }}</p>
+  </li>
+</ul>
