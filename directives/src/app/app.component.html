@@ -13,7 +13,7 @@
   </li>
 </ul> -->
 
-<h2>ngIf directive</h2>
+<!-- <h2>ngIf directive</h2>
 <h2 *ngIf="show">Heading</h2>
 
 <div *ngIf="login; else elseBlock">
@@ -32,4 +32,22 @@
   <h2>Block 2</h2>
 </div>
 
-<button (click)="updateBlock()">Update Block</button>
+<button (click)="updateBlock()">Update Block</button> -->
+
+<button (click)="color = 'red'">Red</button>
+<button (click)="color = 'blue'">Blue</button>
+<button (click)="color = 'green'">Green</button>
+<button (click)="color = 'yellow'">Yellow</button>
+<button (click)="color = 'purple'">Purple</button>
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'red'" style="background-color: red">Red Color</h1>
+  <h1 *ngSwitchCase="'blue'" style="background-color: blue">Blue Color</h1>
+  <h1 *ngSwitchCase="'green'" style="background-color: green">Green Color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="background-color: yellow">
+    Yellow Color
+  </h1>
+  <h1 *ngSwitchCase="'purple'" style="background-color: purple">
+    Purple Color
+  </h1>
+  <h1 *ngSwitchDefault>No Color Matched</h1>
+</div>
