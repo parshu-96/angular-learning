@@ -1,6 +1,6 @@
-<h1>Basic of Reactive Forms</h1>
+<!-- <h1>Basic of Reactive Forms</h1> -->
 
-<form action="" method="post">
+<!-- <form action="" method="post">
   <input type="text" [formControl]="name" placeholder="Enter your name" />
   <br />
   <br />
@@ -14,4 +14,27 @@
   <button type="button" (click)="displayValues()">Login</button>
   <h3>Name: {{ name.value }}</h3>
   <h3>Password: {{ password.value }}</h3>
+</form> -->
+
+<h2>FormGroup</h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Enter your name" formControlName="name" />
+  <br />
+  <input type="text" placeholder="Enter your emails" formControlName="email" />
+  <br />
+  <input
+    type="text"
+    placeholder="Enter your password"
+    formControlName="password"
+  />
+  <br />
+  <button>Login</button>
+  <button type="button" (click)="setValues()">Set Values</button>
 </form>
+
+<h1>{{ profileForm.value.name }}</h1>
+
+<h1>{{ profileForm.value.email }}</h1>
+
+<h1>{{ profileForm.value.password }}</h1>
