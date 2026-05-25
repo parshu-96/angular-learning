@@ -1,35 +1,43 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // name = new FormControl();
-  // password = new FormControl();
-  // displayValues() {
-  //   console.log(this.name.value);
-  //   console.log(this.password.value);
-  // }
   profileForm = new FormGroup({
-    name: new FormControl('John Doe'),
-    email: new FormControl('john.doe@example.com'),
-    password: new FormControl('password123'),
+    name: new FormControl('', [Validators.required]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(30),
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
+    ]),
   });
 
-  onSubmit() {
+  submitData() {
     console.log(this.profileForm.value);
   }
 
-  setValues() {
-    this.profileForm.setValue({
-      name: 'Jane Doe 2',
-      email: 'jane.doe@example.com',
-      password: 'newpassword123',
-    });
+  get name() {
+    return this.profileForm.get('name');
+  }
+  get email() {
+    return this.profileForm.get('email');
+  }
+
+  get password() {
+    return this.profileForm.get('password');
   }
 }
