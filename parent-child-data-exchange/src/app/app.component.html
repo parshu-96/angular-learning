@@ -1,0 +1,9 @@
+<h2>Parent to child data transfer</h2>
+
+<app-user [user]="userName"></app-user>
+
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+  <option value="Bruce Wyne">Bruce Wyne</option>
+  <option value="Clark Kent">Clark Kent</option>
+  <option value="Diana Prince">Diana Prince</option>
+</select>
