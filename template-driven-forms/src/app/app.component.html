@@ -1,23 +1,45 @@
 <h2>Template Driven Forms</h2>
 
 <form #userForm="ngForm" (ngSubmit)="addDetails(userForm)">
-  <input type="text" name="name" placeholder="Name" ngModel />
+  <input
+    #name="ngModel"
+    type="text"
+    required
+    name="name"
+    placeholder="Name"
+    ngModel
+  />
+  <span class="error" *ngIf="name.invalid && name.touched"
+    >Name is required</span
+  >
   <br /><br />
 
-  <input type="password" name="password" placeholder="Password" ngModel />
+  <input
+    #password="ngModel"
+    type="password"
+    minlength="6"
+    maxLength="18"
+    name="password"
+    required
+    placeholder="Password"
+    ngModel
+  />
+  <span class="error" *ngIf="password.invalid && password.touched"
+    >Please enter a valid password</span
+  >
   <br /><br />
 
-  <select name="gender" ngModel>
+  <select #gender="ngModel" name="gender" ngModel>
     <option value="">Select Gender</option>
     <option value="male">Male</option>
     <option value="female">Female</option>
   </select>
   <br /><br />
 
-  <input type="range" min="0" max="20" name="age" ngModel />
+  <input #age="ngModel" type="range" min="0" max="20" name="age" ngModel />
   <br /><br />
 
-  <button type="submit">Submit</button>
+  <button [disabled]="userForm.invalid">Submit</button>
 </form>
 
 <hr />
