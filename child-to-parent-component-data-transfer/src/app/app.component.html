@@ -1,0 +1,6 @@
+<h2>User Component</h2>
+<app-user (handleUsers)="handleUsers($event)"></app-user>
+
+@for (user of users; track user) {
+  <h1>{{ user }}</h1>
+}
