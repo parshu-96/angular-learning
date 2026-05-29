@@ -1,1 +1,7 @@
 <h2>Component Lifecycles</h2>
+
+<button (click)="incrementCounter()">Count : {{ counter }}</button>
+
+<div *ngIf="counter % 4 != 0">
+  <app-user [counter]="counter" #user></app-user>
+</div>
