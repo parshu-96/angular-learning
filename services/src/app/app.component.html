@@ -1,0 +1,9 @@
+<h2>Service</h2>
+<button (click)="getProductData()">Load Product Data</button>
+
+@for (product of productData; track product) {
+  <h4>{{ product.name }}</h4>
+  <h4>{{ product.brand }}</h4>
+  <h4>{{ product.price }}</h4>
+  <br />
+}
